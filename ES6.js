@@ -1,4 +1,4 @@
-//  Default function arguments  in ES6
+//  Default function arguments  in ES6  //
 
 function calculateBill (total, tax = 0.13, tip = 0.15) {
 	return total + (total * tax) + (total * tip);
@@ -13,7 +13,7 @@ console.log(totalBill);
 
 
 
-// var, let, const
+//////// var, let, const ///////////
 
 // var are function scoped - will leak out of block if there is no function
 
@@ -30,3 +30,11 @@ points = 60; // points is now 60
 // use var for top level variables going to be shared
 // use let for local variables with smaller scope
 // refactor let and const if sure no reassignment
+
+
+
+
+///// Arrow Functions///////////
+
+// arrows are anonymous functions, concise, implicit retursn, doesnt rebind value of this when inside another function
+// the 'this' in arrow functions inherits the this from the parent element
