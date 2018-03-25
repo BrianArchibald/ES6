@@ -61,3 +61,37 @@ functions can always remember the variables they see at creation !!
 	window.sayName1 = sayName1;
 }
 sayName1 has closure over the var name.
+
+or another library system
+
+librarySystem('sandwichLibray', function () {
+	// sandwich.js: A simple library for sandwich
+	//Demo usage: sandwichLibrary.breads.wheat ==> 'The healthy option'
+
+	var breads = {
+		wheat: 'The healthy option',
+		white: 'The unhealthy option'
+	};
+
+	var fillings = {
+		turkey: 'For boring sandwiches',
+		cheese: 'For the vegetarians'
+	};
+
+	var sandwichLibrary = {
+		breads: breads,
+		fillings: fillings
+	};
+
+	return sandwichLibrary;
+})
+
+
+//then when want to use the library system
+
+(fucntion () {
+	var sandwichLibrary = librarySystem('sandwichLibrary');
+
+	console.log(sandwichLibrary);
+})(); //object {breads: Object, fillings: Object}
+
