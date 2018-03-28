@@ -36,8 +36,10 @@ refactor let and const if sure no reassignment
 
 /// Arrow Functions///////////
 
-arrows are anonymous functions, concise, implicit retursn, doesnt rebind value of this when inside another function
+arrows are anonymous functions, concise, implicit returns, doesnt rebind value of this when inside another function
 the 'this' in arrow functions inherits the this from the parent element
+
+
 
 
 /// Accessing variables outside function scope IIFE and other scope issues
