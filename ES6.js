@@ -151,3 +151,33 @@ An arrow function is more concise and easier to read:
 // ES6
 const prices = smartPhones.map(smartPhone => smartPhone.price);
 console.log(prices); // [649, 576, 489]
+
+////////////////////Prototype//////////////////////
+
+var dog = {
+	fetch: function() {
+		console.log('fetch');
+	}
+};
+
+var myDog = Object.create(dog);
+myDog.name = 'Alexis';
+
+var randomDog = Object.create(dog);
+randomDog.name = 'Hey';
+
+///myDog has acces to fetch function
+
+myDog.fetch(); ///fetch
+
+Object.getPrototypeof(myDog) === dog ////true
+
+/////Constructor Functions///// use capitalized first letter
+
+var testDog = new Dog();
+
+fucntion Dog() {
+	//this is set to empty object
+	//this is returned
+	this.name = name;
+}
