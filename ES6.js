@@ -181,3 +181,28 @@ fucntion Dog() {
 	//this is returned
 	this.name = name;
 }
+
+////////Recursion/////////////
+
+Functions can see themselves, if you can see yourself
+you can call yourself.  Functions can call themselves. 
+If it calls itself it is a recursive funciton
+
+function recurse () {
+	console.log(recurse);
+} 
+recurse() // prints out function defition.
+
+
+function recurse () {
+	recurse();
+}///recursive function  /// max call stack exceeded.
+
+///////////////// Bang operator //////////////////////////
+
+
+!!(null) //false  - gives you a Boolean value of null
+
+!(null)  // true
+
+Boolean(null) === !!(null)   // may be better to use Boolean operator as it is clearer.
