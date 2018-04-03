@@ -206,3 +206,32 @@ function recurse () {
 !(null)  // true
 
 Boolean(null) === !!(null)   // may be better to use Boolean operator as it is clearer.
+
+/////////////regex//////////////
+
+regex: /pattern/
+
+'gordy'.match(/g/); /// finds g in gordy
+
+'gg'.match(/g/g);  // first g is pattern, second g is the all instances
+ 						// 2nd g is the flag(global flag)
+(/./g) // . is a meta character and stands for any character , inclues 
+//spaces	
+
+[/*members of a set*/]  .match(/[a-z]/g);  //captures all a-z letters
+
+'abAB'.match(/[A-Z]/g);  // uppercase
+
+'1abA2B1'.match(/[0-9]/g);    /// 3 total   1,2,1
+
+.match(/[a-zA-Z0-9]/g) // matches all of them
+
+.match(/[^A-Z]/);  // ^ matches everything that is not A-Z
+
+.match(/[a-zA-Z]{1, 20}/g) // {}- quantifier.  look for at least 1 letter up to 
+//20 times ---
+
+if unknown how long the word will be you can leave out 2nd number {1,}
+or you can just use a + instead of {1,} // they are the same.
+
+.match(/[a-z]/gi); // the i is case insenstive flag. will get uppers too.
