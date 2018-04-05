@@ -235,3 +235,12 @@ if unknown how long the word will be you can leave out 2nd number {1,}
 or you can just use a + instead of {1,} // they are the same.
 
 .match(/[a-z]/gi); // the i is case insenstive flag. will get uppers too.
+
+/////operators//////
+
+a = a + 2  === a += 2   or -= works for substacting
+
+var a = 42
+if(a)  /// converts a to Bool // if true, run.
+
+falsy = null, undefined, 0, -0, NaN, "", false
