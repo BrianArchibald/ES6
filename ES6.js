@@ -244,3 +244,32 @@ var a = 42
 if(a)  /// converts a to Bool // if true, run.
 
 falsy = null, undefined, 0, -0, NaN, "", false
+
+
+///Destructuring
+
+const = {name, weapon, room} = {
+	"name": "Rusty",
+	"room": "kitchen",
+	"weapon": "candlestick"
+}
+//name 
+//"Rusty"
+
+//Omit certain values
+var [a, ,b] = [1,2,3];
+console.log(a,b); // 1 3
+
+//combine with spread/rest operator
+var [a, ...b] = [1,2,3];
+console.log(a,b); // 1 [2,3]
+
+//swap variable easily without temp
+var a =1, b=2;
+[b, a] = [a,b];
+console.log(a,b); // 2 1
+
+//Advance deep arrays
+var[a [b [c,d]]] = [1 [2 [[[3,4] 5] 6]]];
+console.log ('a:' a, 'b:', b, 'c:', c, "d:", d);
+// a: 1 b:2 c: [[3,4],5] d:6
