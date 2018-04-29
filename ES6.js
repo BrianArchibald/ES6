@@ -292,7 +292,7 @@ var [{color: firstColor}, {color: secondColor}] = suspects
 
 //// For of loop  //////////////////////////////////////////////
 
-//can loop over any type of data that is an iterable
+//can loop over any type of data that is an iterable, except objects
 
 const cuts = ['Chuck', 'Brisket', 'Shank','Short Rib'];
 
@@ -313,3 +313,42 @@ const cuts = ['Chuck', 'Brisket', 'Shank','Short Rib'];
 for (const cut of cuts) {
 	console.log(cut);
 }
+
+cuts.entries(); // gives your the arrayiterator
+
+const meat = cuts.entries();
+//  meat.next()
+// gives you done: false // array is not done yet
+// then the first index of array
+then you can use Destructuring
+
+for (const [i, cut] of cuts.entries()) {
+	console.log(`${cut} is the ${i + 1} item`);
+}  // Chuck is the 1 item, etc...
+
+
+function addUpNumbers () {
+	let total = 0;
+	for (const num of arguments) {
+		total += num;
+	}
+	return total;
+}
+
+addUpNumbers(10,23,34,45);
+
+
+const name = "Brian";
+for (const char of name) {
+	console.log(char);
+} // B r i a n
+
+// you can use for DOM elements
+
+const ps = document.querySelectorAll('p');
+for (const paragraph of ps) {
+	paragraph.addEventListener('click', function() {
+		console.log(this.textContent);
+	})
+} // logs what is there when clicked
+
