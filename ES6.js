@@ -352,3 +352,66 @@ for (const paragraph of ps) {
 	})
 } // logs what is there when clicked
 
+
+
+///////// New String methods  ///////////////////
+
+
+const course = 'RFB3';
+const flightNumber = '20-AC2018-jz';
+const accountNumber = '8252422334RT345235';
+
+course.startsWith('RFB') // true  , it is case sensitive
+
+flightNumber.startsWith('AC',3) // true start looking after 3 characters.
+flightNumber.endsWith('jz') // true
+
+accountNumber.endsWith('RT',11) // only take the first 11 numbers and look at those
+
+.includes // checks if anywhere in the string
+
+.repeat // allows you to repeat a string
+
+function leftPad(str, length = 20) {
+	return `-> ${' '.repeat(length - str.length)}${str}`; 
+}  // will give 20 left spaces for all the items you put in.
+
+
+
+/////////// Descrtructing array  ///////////
+
+
+
+allows you extract data from something and use them
+
+const person = {
+	first: 'Brian',
+	last: 'Archibald',
+	links: {
+		social: {
+			twitter: 'url'  
+		}
+	}
+};
+
+const { first, last } = person;  /// give me a variable called
+//first and a var called last and take if from person
+
+first // 'Brian'
+
+// using Descrtructing in nested items
+// instead of  const twitter = person.links.social.twitter;
+
+const { twitter } = person.links.social;
+
+//renaming variables with destructuring
+
+const { twitter:tweet } = person.links.social; // now names tweet
+
+//use defaults with descrtructuring
+const setting = { width: 300, color: 'black'} // no height
+const { width = 100, height = 100, color = "blue"} = settings;
+// will use width 300 but will set height to 100 and use black
+
+
+
