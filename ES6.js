@@ -273,3 +273,43 @@ console.log(a,b); // 2 1
 var[a [b [c,d]]] = [1 [2 [[[3,4] 5] 6]]];
 console.log ('a:' a, 'b:', b, 'c:', c, "d:", d);
 // a: 1 b:2 c: [[3,4],5] d:6
+
+
+var suspects = [
+	{
+		name: "rusty",
+		color: 'orange'
+	}, {
+		name: "mrs white",
+		color: "red"
+	}
+]
+
+var [color, color2] = [suspects[0].color, suspects[1].color];
+//or the same result below
+var [{color: firstColor}, {color: secondColor}] = suspects
+
+
+//// For of loop  //////////////////////////////////////////////
+
+//can loop over any type of data that is an iterable
+
+const cuts = ['Chuck', 'Brisket', 'Shank','Short Rib'];
+
+// for (let i = 0; i < cuts.length; i++) {
+// 	console.log(cuts[i]);
+// }
+
+
+// cuts.forEach((cut) => {   // can't skip one or abort loop
+// 	console.log(cut);
+// })
+
+
+// for(const index in cuts) {
+// 	console.llog(cuts[index]);
+// }   /// iterate over things that have been added to prototype as well
+
+for (const cut of cuts) {
+	console.log(cut);
+}
