@@ -415,3 +415,48 @@ const { width = 100, height = 100, color = "blue"} = settings;
 
 
 
+////////////  Destructuring Arrays  /////////////////////
+
+const details = ['Brian', 123, 'brianarchibald.me'];
+
+const name = details[0]; // normal way
+
+const [name, id, website] = details;
+console.log(name, id, website);
+
+const data = 'basketball, sports, 90210, 23';
+const [itemName, category, sku, inventory] = data.split(',');
+// if there are extras items in the array they will just be ignored. or
+const [itemName, category, ...other] = data.split(',');  //rest operator ...
+
+
+///////// Swapping vars with Destructuring  //////////
+
+let inRing = 'Hulk';
+let onSide = "Rock";
+
+[inRing, onSide] = [onSide, inRing];  //let is important here
+
+///// Destructing Functions   ///
+
+
+function convertCurrency(amount) {
+	const converted = {
+		USD: amount * 0.76,
+		MEX: amount * 13.30
+	};
+
+	// const hundo = convertCurrency(100);
+	// console.log(hundo); // USD 76   MEX 1330
+
+	const {USD, MEX} = convertCurrency(100);
+	console.log(USD, MEX);  // order doesnt matter
+
+	
+
+}
+
+
+
+
+
