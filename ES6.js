@@ -485,3 +485,40 @@ const ages = Array.of(12,33,232,232);
 console.log(ages);
 
 
+//////////  Array.find     Array.findIndex
+
+const post = posts.find(post => {
+	console.log(post.code); // code is a key in object
+	if(post.code === 'thew323h2') {  //'thew323h2' is the code pair
+		return true;
+	}
+	return false;
+});
+
+or even easier
+
+const post = posts.find(post => post.code === 'thew323h2');
+
+
+//// findIndex
+
+const postIndex = post.findIndex((post) => {
+	if(post.code === 'shwsehrwe') {
+		return true;
+	}
+	else return false;
+})
+
+or 
+const postIndex = post.findIndex((post => post.code === 'sseww');
+
+
+///////   Array.some()   and Array.every()  //////////
+will check items in array to see if some or every matches
+
+const ages = [32,15,19,12];
+
+const adultPresent = ages.some(age => age >=18); // will stop once it reaches
+//the first one and return true
+
+const allOldEnough = ages.every(age => age >= 19); // return false
