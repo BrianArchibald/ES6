@@ -452,11 +452,36 @@ function convertCurrency(amount) {
 	const {USD, MEX} = convertCurrency(100);
 	console.log(USD, MEX);  // order doesnt matter
 
-	
-
 }
 
+///////   Array.of()   Array.from()  /////////
 
+will take array like elements and turn them into an array, such as 
+DOM elements .. Array.from can take a 2nd argument
 
+<div class	= 'people'>
+<p> Me </p>
+<p> You </p>  // DOM elements can be arrayish
+
+const people = document.querySelectorAll('.people p');
+
+or
+const people = Array.from(document.querySelectorAll('.people p'));
+
+//const peopleArray = Array.from(people);
+const names = peopleArray.map(person => person.textContent);
+
+////
+function sumAll() {
+	const nums = Array.from(arguments);  // arguments is arrayish
+	return nums.reduce((prev,next) => prev + next, 0);
+}
+
+sumAll(2,23,234,242);
+
+////// array.of  /////////
+
+const ages = Array.of(12,33,232,232);
+console.log(ages);
 
 
