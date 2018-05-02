@@ -592,3 +592,68 @@ function sayHi(first, last) {
 }
 
 sayHi(...name);
+
+
+
+///////////  ....Rest Param  ////////////
+rest param takes multiple things and packs them into an array....opposite of spread operator
+
+
+fucntion covertCurrency (rate, ...amounts) {  //will grab multiple amounts 
+	console.log(rate, amounts);  /// amounts will be in an array now. rate is not in function
+	//or other use
+	// return amount.map(amount => amount * rate);
+}
+
+convertCurrency(1.54, 10, 23, 33);
+
+// can use when destructuring as well.
+
+const runner = ['Name', 123, 5.5, 5 ,3, 6]; // first name, id, then run lengths
+const [name, id, ...runs] = runner;
+
+const team = ['Capt', 'Asst', 'player1', 'player2'];
+
+const [captain, assistant, ...players] = team;
+
+
+
+////////////   Object Literal Upgrades      /////////////
+
+const first = 'snickers';
+const last = 'archibald';
+
+//old way 
+const dog = {
+	first: first,
+	last: last
+};
+
+///but if first and first are the same you can..
+
+const dog = {
+	first,
+	last
+};
+
+// modal
+
+const modal = {
+	open:  function () {   //// now only     open() {   }
+
+	},
+	close:  function () {
+
+	},
+	create:  function () {
+
+	},
+};
+
+const keys = ['size', 'color'];
+const values = ['medium', 'red'];
+
+const shirt {
+	[keys.shift()]; values.shift();
+	[keys.shift()]; values.shift();
+}// now its an object with size: medium, color: red
