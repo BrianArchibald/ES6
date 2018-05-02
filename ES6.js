@@ -522,3 +522,32 @@ const adultPresent = ages.some(age => age >=18); // will stop once it reaches
 //the first one and return true
 
 const allOldEnough = ages.every(age => age >= 19); // return false
+
+
+
+
+////// Spread Operator  //////
+
+takes every item from a string/array and apply it to the containing 
+element
+
+[...'Brian']  // spreads each item into an array
+
+let pizzas = [...featured,'veg' ...specialty]; // concats 2 arrays and 
+//adds veg in between as well
+
+
+
+// can copy an array as well without affecting the first array
+
+const fridayPizzas = [...pizzas];
+
+<h2 class ='jump'>Spreads</h2>   ///
+
+const heading = document.querySelector('.jump');
+cont spans = sparanWrap(heading.textContent);
+
+function sparanWrap(word) {
+	return [...word].map(letter => `<span>${letter}</span>`).join('');
+} 
+//wrapped all the letters in a span
