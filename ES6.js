@@ -550,4 +550,45 @@ cont spans = sparanWrap(heading.textContent);
 function sparanWrap(word) {
 	return [...word].map(letter => `<span>${letter}</span>`).join('');
 } 
-//wrapped all the letters in a span
+//wrap all the letters in a span
+
+
+
+const people = Array.from(document.querySelectorAll('.people p'));
+//now have array functions
+or 
+const people = [...document.querySelectorAll('.people p')];
+
+
+creat new array on a property on an object
+
+const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+//takes all the ingredients in the object deepDish and prop ingredients.
+// its a true copy and not a reference to the prop
+
+find and remove a comment from an array called comments
+
+const id = 632;
+
+const commentIndex = comments.findIndex(comment => comment.id === id);
+//comment index is at 2 you want to remove
+const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+
+/// Spread into a function  ///
+
+const inventors = ['Einstein', 'Newton'];
+const newInventors = ['Musk', 'Jobs'];
+
+// push alone doesn't work creats two arrays, i wnat to just add musk and jobs
+// to new array
+
+inventors.push(...newInventors); // works
+
+
+const name = ['Brian', 'Archibald'];
+
+function sayHi(first, last) {
+	alert(`Hey there ${first} ${last}`);
+}
+
+sayHi(...name);
