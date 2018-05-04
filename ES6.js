@@ -657,3 +657,51 @@ const shirt {
 	[keys.shift()]; values.shift();
 	[keys.shift()]; values.shift();
 }// now its an object with size: medium, color: red
+
+
+
+
+///////// Template strings   ///////////////////
+
+const name = 'Lucy'
+const sentence = `My dog ${name}`;  ///can also do
+// ${age * 7} 
+
+
+//can do multiple lines   - HTML fragments
+const markup = `
+	<div class='person'>
+	<h2>
+		${person.name}
+		<span class='job'>${person.job}</span>
+	</h2>
+	</div>
+`;
+
+document.body.innerHTML = markup;
+
+//they can be nested inside of one another
+
+
+////  tagged template literals
+
+function highlight() {
+	return 'cool';
+}
+
+const name = 'Snickers';
+const age = '100';
+const sentence = highlight `My dog's name is ${name} and he is 
+	${age} years old`;
+	// function will only return the string cool
+
+function highlight(strings, ...values) { //strings is array
+				// and breaks up array into 3 chunks , values is snickers and 100
+	
+}
+
+const name = 'Snickers';
+const age = '100';
+const sentence = highlight `My dog's name is ${name} and he is 
+	${age} years old`;
+	// function will only return the string cool
