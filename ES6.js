@@ -764,4 +764,81 @@ p.then (data => {
 
 .catch(err => {
 	console.error(err);  /// now logs the error 'not cool'
-})	
+})
+
+
+//// chaining promises
+
+const posts = [some data];
+const authors = [some more data];
+
+
+//create two promises, then chain them together
+
+function getPostById(id) {
+	// creat a new promise
+	return new Promise((resolve, reject) => {
+		//use setTimeout to mimic database
+		setTimeout(() => {
+			//find post we want
+		const post = posts.find(post => post.id === id);
+		if(post) {
+			resolve(post) // send back post
+		} else {
+			reject(Error('No post found'));
+		}
+		}, 200);
+	});
+}
+
+funtion hydrateAuther(post) {
+	// create new promis
+	return new Promise((resolve, reject) => {
+		//find  author
+		const authorDetails = authors.find(person => person.name === post.author);
+		if(authorDetails) {
+		//'hydrate the post object with the author object' 
+			post.author = authorDetails;
+			resolve(post);
+		} else {
+			reject(Error('cant find author'));
+		}
+		
+	});
+}
+
+getPostById(2)
+	.then(post => {
+		console.log(post);
+		hydrateAuther(post); //this is going to return another promise.
+	})
+	.then(post => {
+		console.log(post);
+	} )
+	catch(err => {
+		console.error(err);
+	});
+
+	////// working with multiple promises,
+	// you have multiple promises that dont depend on one another and you want to get them
+	// both back as soon as possible.
+
+	Promise
+		.all([weather, tweets])
+		.then(responses => {
+			const [weatherInfo, tweetsInfo] = responses; 
+			console.log(weatherInfo, tweetsInfo);   // waiting for all the promises to be resolved befor the 'then'
+		})
+//////////////////////////////
+
+const postsPromise = fetch('data');
+const streetCarPromise = fetch('data');
+
+		Promise
+			.all([postsPromise, streetCarPromise])
+			.then(responses => {
+				return Promis.all(responses.map(res => res.json())) // turns reg data into json
+			})
+			.then(responses => {
+				console.log(responses);
+			});	
