@@ -705,3 +705,63 @@ const age = '100';
 const sentence = highlight `My dog's name is ${name} and he is 
 	${age} years old`;
 	// function will only return the string cool
+
+//////// Promises //////////
+
+browser already has a fetch() to retrieve data, you can fetch any type of data not just json 
+
+const postsPromise = fetch('http://somewhere.com/wp-json/wp/v2/posts');
+
+postsPromise      // the thens only fire when the data successfully comes back
+	.then(data => data.json())
+	.then(data => {console.log(data)})
+	.catch((err) => {
+		console.error(err);
+	})   // runs with error
+ 
+
+$('a').on('click',function() {
+	alert('hey'); // runs when someone clicks it similar to a thne function, runs when clicked
+})
+
+///create own promise
+
+const p = new Promise((resolve, reject) => {
+
+	resolve('cool');
+});
+
+p.then (data => {
+	console.log(data);  // immediately consoles 'cool' 
+})
+
+/////////////
+
+
+const p = new Promise((resolve, reject) => {
+	setTimeout (() => {
+		resolve('cool');
+	}, 1000);
+	
+});
+
+p.then (data => {
+	console.log(data);  // now logs after 1 second
+})
+
+////////////
+
+const p = new Promise((resolve, reject) => {
+	setTimeout (() => {
+		reject(Error('not cool'));
+	}, 1000);
+	
+});
+
+p.then (data => {
+	console.log(data); 
+})
+
+.catch(err => {
+	console.error(err);  /// now logs the error 'not cool'
+})	
