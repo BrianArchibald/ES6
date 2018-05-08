@@ -841,4 +841,69 @@ const streetCarPromise = fetch('data');
 			})
 			.then(responses => {
 				console.log(responses);
-			});	
+			});
+
+/////////////////////////
+
+Key in objects
+
+There also exists a special operator "in" to check for the existence of a property.
+
+The syntax is:
+
+"key" in object
+
+let user = { name: "John", age: 30 };
+
+alert( "age" in user ); // true, user.age exists
+alert( "blabla" in user ); // false, user.blabla doesn't exist
+
+///////////////  For in loop for objects ////////
+
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for(let key in user) {
+  // keys
+  alert( key );  // name, age, isAdmin
+  // values for the keys
+  alert( user[key] ); // John, 30, true
+}
+
+//////// copy object not by reference...normally it is by reference only ////
+
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = {}; // the new empty object
+
+// let's copy all user properties into it
+for (let key in user) {
+  clone[key] = user[key];
+}
+
+or object.assign
+
+let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+
+//another example
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = Object.assign({}, user);
+	
