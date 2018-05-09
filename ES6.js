@@ -907,3 +907,39 @@ let user = {
 
 let clone = Object.assign({}, user);
 	
+
+//////////////   Symbols    ///////////////////////
+
+If we want to use a symbol in an object literal, we need square brackets.    Like this:
+
+let id = Symbol("id");
+
+let user = {
+  name: "John",
+  [id]: 123 // not just "id: 123"
+};
+
+
+//strings dont convert to a string and can't be overwritten.
+// they are skipped in    for..in
+
+// object.assign to copy a object works on them and will copy them.
+
+Global Symbols
+
+// read from the global registry
+let id = Symbol.for("id"); // if the symbol did not exist, it is created
+
+// read it again
+let idAgain = Symbol.for("id");
+
+// the same symbol
+alert( id === idAgain ); // true
+//////////////////////////////////////
+
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// get name from symbol
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id
