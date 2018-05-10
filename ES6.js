@@ -943,3 +943,83 @@ let sym2 = Symbol.for("id");
 // get name from symbol
 alert( Symbol.keyFor(sym) ); // name
 alert( Symbol.keyFor(sym2) ); // id
+
+
+/////// ES6 Symbols  ////
+
+are unique identifiers to avoid naming collisions
+
+const brian = Symbol('Brian') // Brian is just a descriptor 
+
+const classRoom = {
+	[Symbol('olivia')] : { grade: 80, gender: 'female'},
+	[Symbol('olivia')] : { grade: 80, gender: 'female'}
+	
+}/// olivia's will be separate and not overwrite one another
+
+//can't loop over symbols. 
+
+Object.getOwnProperySymbols(classRoom);
+console.log(syms);  //gives array of symbols but not the object, its just the keys that
+//  this gives you
+const data = syms.map(sym => classRoom[sym])  // will give you the data
+
+
+
+////////   Prototypal inheritance   //////
+
+function Dog(name, breed) {
+	this.name = name;
+	this.breed = breed;
+}
+
+Dog.prototype.bark = function() {
+	console.log(`Bark my name is ${this.name}`)
+}
+
+const mila = new Dog('Mila', 'Lab');
+const zoey = new Dog('Zoey', 'Lab');
+
+
+both mila and zoey inherit from the 1st object and can use mila.bark() and zoey.bark()
+the bark is inherited to every instance of Dog
+
+you can change the bark after the fact and it will be the new bark as well
+
+the bark is on the prototype not on the mila,zoey but can be used with them
+
+
+//////  Class ////
+
+class Dog {  // class declaration
+
+}
+
+or
+
+const Dog = class { // class expression
+
+}
+///// basics of a class   with getters and setters
+
+
+class Dog {  
+	constructor(name, breed) {
+		this.name = name;
+		this.breed = breed;
+	}  // no comma
+	bark() {
+		console.log(`Bark my name is ${this.name}`)
+	} 
+	static info(){
+		console.log("dogs are great")// not accessible to mila and zoey , only static
+	}
+	get descriptoin() {
+		return `${this.name} is a ${this.breed}`;
+	}
+	set nickname(value) {
+		this.nick = value.trim();
+	}
+	get nicknames() {
+		return this.nick;
+	}
