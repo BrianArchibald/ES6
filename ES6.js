@@ -1023,3 +1023,32 @@ class Dog {
 	get nicknames() {
 		return this.nick;
 	}
+
+	//////////    Classes can be extended  ////////////////
+
+	class Animal {
+		constructor(name) {
+			this.name = name;
+			this.thirst = 100;
+			this.belly = [];
+		}
+		drink() {
+			this.thrist -= 10;
+			return this.thirst;
+		}
+		eat(food) {
+			this.belly.push(food);
+			return this.bellly;
+		}
+	}
+
+	class Dog extends Animal {
+		constructor() {
+			super(name);   //// need super here that extends Animal
+			this.breed = breed;
+
+		}
+	}
+
+	const rhino = new Animal ('Rhiney');
+	const snickers = new Dog ('Dog' , 'King Charles');
